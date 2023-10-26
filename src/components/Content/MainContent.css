@@ -1,0 +1,25 @@
+/* src/components/MainContent.css */
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200px;
+  background-color: #0F3456; /* Dark blue background color */
+  color: #EFDDB2; /* White text color */
+}
+
+.main-content h2 {
+  margin: 20px 0;
+  font-size: 60px;
+}
+
+.main-content h2 strong {
+  color: #e6ca88;
+}
+
+.main-content p {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
