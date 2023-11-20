@@ -1,0 +1,20 @@
+.work {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center;
+  padding: 50px;
+  padding-top: 10vh; /* Adjust top padding to bring content upwards */
+  background: radial-gradient(circle at top right, rgba(38,51,97,1) 0%, rgba(65,143,222,1) 100%);
+  color: #EFDDB2;
+  min-height: 100vh; /* Full height of viewport */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.work h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  margin-top: 0; /* Reset default margin */
+  margin-bottom: 1rem; /* Reduced space before the content starts */
+}

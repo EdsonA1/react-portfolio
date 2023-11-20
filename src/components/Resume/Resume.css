@@ -1,0 +1,88 @@
+/* Resume.css */
+.resume-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  background-color: #f4f4f4; /* Light grey background */
+}
+
+.resume-block {
+  display: flex;
+  align-items: center;
+  background-color: #fff; /* White background for blocks */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  width: 80%;
+  flex-direction: column;
+}
+
+.icon {
+  font-size: 2em;
+  color: #4a90e2; /* Icon color */
+  self-align: start;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.6em;
+  color: #333; /* Dark text color for headers */
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.3em;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+p, li {
+  color: #555; /* Lighter text color for paragraphs and list items */
+  line-height: 1.6;
+}
+
+ul {
+  list-style: inside; /* Bullets inside the list */
+  padding-left: 0;
+}
+
+a {
+  color: #1a0dab; /* Link color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Specific Styles for Different Sections */
+.experience, .project-detail, .experience-detail {
+  border-left: 4px solid #34a853; /* Green color for experience section */
+  padding-left: 15px;
+}
+
+.projects {
+  border-left: 4px solid #e26a4a; /* Orange color for projects section */
+  padding-left: 15px;
+}
+
+.travel {
+  border-left: 4px solid #fbbc05; /* Yellow color for travel section */
+  padding-left: 15px;
+}
+
+/* Additional CSS for Travel Images */
+.travel-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Or use 'auto' for a row layout */
+  gap: 10px;
+}
+
+.travel-images img {
+  width: 100%; /* Adjust as needed */
+  height: auto;
+  border-radius: 5px; /* Optional: for rounded corners */
+}

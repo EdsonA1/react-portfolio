@@ -1,25 +1,59 @@
-/* src/components/MainContent.css */
-
 .main-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 200px;
-  background-color: #0F3456; /* Dark blue background color */
-  color: #EFDDB2; /* White text color */
+  justify-content: center;
+  padding: 5% 10%;
+  min-height: 60vh;
+  box-sizing: border-box;
+  position: relative; /* Add this for positioning */
+  background: radial-gradient(circle at top right, rgba(38, 51, 97, 1) 0%, rgba(65, 143, 222, 1) 100%); /* Set the background here */
 }
 
-.main-content h2 {
-  margin: 20px 0;
-  font-size: 60px;
+.profile-container {
+  flex-basis: 40%;
+  padding: 20px;
+  text-align: center;
+  z-index: 2; /* Add this for proper layering */
 }
 
-.main-content h2 strong {
-  color: #e6ca88;
+.profile-pic {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 50%; /* Add border-radius for circular profile pic */
 }
 
-.main-content p {
-  margin: 10px 0;
-  font-size: 24px;
+.text-content {
+  flex-basis: 60%;
+  padding: 20px;
+  z-index: 2; /* Add this for proper layering */
 }
 
+.text-content h2 {
+  font-size: 3.5rem;
+  color: rgba(65, 143, 222, 1);
+}
+
+.text-content p {
+  font-size: 1.5rem;
+  color: #EFDDB2;
+}
+
+.home__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 400px; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
+  z-index: 1; /* Ensure the blob is behind content */
+}
+
+.home__blob {
+  width: 100%;
+  height: 100%;
+  fill: radial-gradient(circle at top right, rgba(38, 51, 97, 1) 0%, rgba(65, 143, 222, 1) 100%);
+}
+
+.home__blob-img {
+  width: 100%;
+}

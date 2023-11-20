@@ -3,10 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 
-/* Reset styles */
-* {
-    margin: 0;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+:root {
+    --primary-color: #0056b3; /* Primary color for your theme */
+    --secondary-color: #EFDDB2; /* Secondary color */
+    --font-family: 'Arial', sans-serif; /* Main font family */
 }
+
+.App {
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+}
+
+/* Other global styles */

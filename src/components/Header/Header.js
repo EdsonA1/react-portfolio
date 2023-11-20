@@ -11,9 +11,9 @@ const Header = () => {
             <h1 className='logo'>EDSON.A</h1>
             <div className={`nav ${isOpen ? 'open' : ''}`}>
                 <div className="menuItems">
-                    <a href="resume.html" className="resume">Resume</a>
+                    <a href="resume.html" className="resume">Work</a>
                     <a href="about.html" className="about">About</a>
-                    <a href="profile.html" className="profile">Profile</a>
+                    <a href="profile.html" className="profile">Resume</a>
                     <a href="contact.html" className="contact">Contact</a>
                 </div>
             </div>
