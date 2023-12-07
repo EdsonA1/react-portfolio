@@ -1,82 +1,112 @@
+/* Reset some styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styles */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 20px; /* Adjust the padding as needed */
-  background-color: #fff; /* Or any color you prefer */
-
+  padding: 20px;
+  background-color: #fff; /* Adjust the color as necessary */
 }
 
 .header-content {
-  width: 100%;
-  max-width: 1200px; /* Adjust based on your max container width */
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative; /* Needed for absolute positioning of the nav menu */
 }
 
 .logo {
-  height: 50px; /* Adjust the size as needed */
+  height: 50px; /* Adjust as needed */
 }
 
+/* Navigation menu styles */
 .nav {
   display: flex;
-  justify-content: center;
-  gap: 20px; /* This sets the space between your nav items */
-  margin: 0 10px; /* Adjust margin as needed for spacing */
+  gap: 20px;
 }
 
 .nav a {
   text-decoration: none;
-  color: black; /* Adjust the text color as needed */
-  font-weight: bold; /* If you want the text to be bold */
+  color: black; /* Adjust the color as necessary */
+  font-weight: bold;
 }
 
+/* Social icon styles */
 .icon-group {
   display: flex;
-  gap: 20px; /* This sets the space between your icons */
-  align-items: center;
+  gap: 20px;
 }
 
 .icon-group a {
-  color: black; /* This sets the icon color */
-  font-size: 24px; /* Adjust the size as needed */
-  text-decoration: none; /* Removes underline from links */
+  color: black; /* Adjust the color as necessary */
+  text-decoration: none;
 }
 
+/* Hamburger menu styles - hidden by default */
 .nav-toggle {
-  display: none; /* Hide the nav-toggle if it should only show on mobile */
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
-/* Hover effect for icons and links */
-.nav a:hover, .icon-group a:hover {
-  color: #666; /* Darken icon and text color on hover */
+.hamburger-menu div {
+  background-color: black; /* Adjust the color as necessary */
+  height: 2px;
+  width: 30px;
+  margin: 5px 0;
+  transition: transform 0.3s ease;
 }
 
-/* Responsive adjustments if needed */
+/* Hamburger to X toggle */
+.nav-toggle.open .hamburger-menu div:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.nav-toggle.open .hamburger-menu div:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open .hamburger-menu div:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    justify-content: center;
+  .nav-toggle {
+    display: block; /* Show the hamburger menu on small screens */
   }
 
   .nav {
-    order: 3;
-    gap: 15px; /* Smaller gap for smaller screens */
+    display: none; /* Hide the nav links by default on smaller screens */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    right: 0;
+    background-color: #fff; /* Match the background color of the header */
+    z-index: 10; /* Ensure it's above other content */
+  }
+
+  .nav.nav-visible {
+    display: flex; /* Show the nav menu when the hamburger is clicked */
+  }
+
+  .nav a {
+    padding: 10px;
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Full width links */
   }
 
   .icon-group {
-    order: 2;
-  }
-
-  .logo {
-    order: 1;
-    margin-bottom: 10px; /* Add space below logo */
-  }
-
-  .nav-toggle {
-    order: 4;
-    display: block; /* Show the nav-toggle on mobile */
+    display: none; /* Hide social icons on smaller screens */
   }
 }

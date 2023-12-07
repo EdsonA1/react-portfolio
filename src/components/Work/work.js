@@ -1,6 +1,6 @@
-// Work.js
 import React from 'react';
 import './work.css';
+import Cards from '../Cards/cards';
 
 const Work = () => {
     const projects = [
@@ -40,24 +40,26 @@ const Work = () => {
             image: 'path_to_image_here',
             link: '#'
         },
-        // Add as many projects as you need here
     ];
 
     return (
         <div id="work" className="work">
-          <h2 className="work-title">Work</h2>
-          <div className="cards-container">
-            {projects.map((project, index) => (
-              <div key={index} className="project-card">
-                <img src={project.image} alt={project.title} className="project-image" />
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <a href={project.link} className="project-link">Learn More</a>
-              </div>
-            ))}
-          </div>
+            <h2 className="work-title">Work</h2>
+            <p className="work-desc">Below, you can explore a selection of my projects...</p>
+            <div className="cards-container">
+                {projects.map((project, index) => (
+                    <div key={index} className="project-card">
+                        <Cards
+                            title={project.title}
+                            description={project.description}
+                            image={project.image}
+                            link={project.link}
+                        />
+                    </div>
+                ))}
+            </div>
         </div>
-      );
-    };
-    
+    );
+};
+
 export default Work;

@@ -56,24 +56,45 @@
   object-fit: cover;
 }
 
-.sayhi {
-  background-color: black; /* Button background color */
-  color: white;
+.sayhi,
+.viewwork {
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 1.25rem;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-  display: inline-block;
+  margin: 10px; /* Added margin for space between buttons */
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  text-decoration: none;
+  border: 2px solid black; /* Solid border */
+  width: 200px; /* Fixed width */
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.sayhi {
+  background-color: black;
+  color: white;
 }
 
 .sayhi:hover {
-  background-color: #393e46; /* Darken button background on hover */
+  background-color: white;
+  color: black;
+}
+
+.viewwork {
+  background-color: white;
+  color: black;
+  border: 2px solid black; /* Ensure the border is visible */
+}
+
+.viewwork:hover {
+  background-color: black;
+  color: white;
 }
 
 .sayhi .wave {
   display: inline-block;
-  margin-left: 5px; /* Space between text and emoji */
+  margin-left: 5px;
   transition: transform 0.3s ease;
 }
 
@@ -85,4 +106,33 @@
   0%, 100% { transform: rotate(0deg); }
   10%, 30%, 50%, 70%, 90% { transform: rotate(-14deg); }
   20%, 40%, 60%, 80% { transform: rotate(14deg); }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .bitmoji {
+    width: 200px; /* Adjust width for smaller screens */
+    height: 200px; /* Adjust height for smaller screens */
+    margin-bottom: 20px; /* Space below the image */
+  }
+
+  .main-content {
+    padding: 0;
+    text-align: center;
+  }
+
+  .main-content h1 {
+    font-size: 2rem; /* Slightly smaller font size for headings */
+  }
+
+  .main-content p,
+  .sayhi,
+  .viewwork {
+    font-size: 1rem; /* Smaller font size for text and buttons */
+  }
 }

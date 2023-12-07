@@ -1,73 +1,63 @@
-.cards {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* To align items at the top */
-  flex-wrap: wrap;
-  gap: 30px; /* More space between cards for better clarity */
-  padding: 20px;
-  max-width: 1200px; /* Limiting the maximum width */
-  margin: 0 auto; /* Centering cards container */
+/* Cards.css */
+
+.project-card {
+  width: 270px; /* Fixed width for the card */
+  background: #FFFFFF; /* Card background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Card shadow for depth */
+  overflow: hidden; /* Ensures content fits within the corners */
+  margin: 15px; /* Space around card */
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions for hover effects */
 }
 
-.card {
-  border: none;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  margin: 10px;
-  width: calc(33.333% - 40px); /* Adjust for 3 columns layout */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.project-card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+.project-image-container {
+  width: 100%; /* Image container takes up full card width */
+  padding-top: 56.25%; /* Aspect ratio padding hack for 16:9 aspect ratio */
+  background: #f0f0f0; /* Placeholder background color */
+  position: relative; /* Positioning context for absolute child elements */
 }
 
-.card-image.top {
+.project-image {
+  position: absolute; /* Absolute position the image */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 180px; /* Fixed height for uniformity */
-  object-fit: cover; /* Ensures the image covers the area */
+  height: 100%;
+  object-fit: cover; /* Ensure image covers the container */
 }
 
-.card-body {
-  padding: 20px;
-  color: #333;
+.project-info {
+  padding: 15px; /* Padding inside card for content */
 }
 
-.card-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #007bff;
+.project-title {
+  font-size: 1.1rem; /* Title font size */
+  font-weight: bold; /* Title font weight */
+  color: #333; /* Title text color */
+  margin-bottom: 10px; /* Space below title */
 }
 
-.card-text {
-  margin-bottom: 20px;
+.project-description {
+  font-size: 0.9rem; /* Description font size */
+  color: #666; /* Description text color */
+  margin-bottom: 15px; /* Space below description */
 }
 
-.card-button {
-  display: inline-block;
-  padding: 10px 15px;
-  color: white;
-  background-color: #007bff;
-  text-decoration: none;
-  border-radius: 5px;
+.project-link {
+  display: inline-block; /* Allows padding and margin */
+  padding: 10px 15px; /* Padding for clickable area */
+  background: #007bff; /* Link background color */
+  color: #ffffff; /* Link text color */
+  text-decoration: none; /* No underline */
+  border-radius: 5px; /* Rounded corners for link/button */
+  transition: background-color 0.3s ease; /* Transition for background color */
 }
 
-.card-button:hover {
-  background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-  .card {
-    width: calc(50% - 30px); /* Adjust for 2 columns layout on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    width: 100%; /* Full width on very small screens */
-    margin: 0 0 30px; /* Only bottom margin */
-  }
+.project-link:hover {
+  background: #0056b3; /* Darken background on hover */
 }

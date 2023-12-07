@@ -1,5 +1,3 @@
-/* work.css */
-
 .work {
   display: flex;
   flex-direction: column;
@@ -8,63 +6,96 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 50px 20px; /* Increased padding for more white space */
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif; /* Consistent font with the rest of the page */
+  color: #333; /* Softer color for text */
 }
 
 .work-title {
-  font-size: 2em;
-  font-weight: bold;
-  color: #000;
-  text-align: center;
+  font-size: 3em; /* Larger size for the section title */
+  margin-bottom: 1em; /* Spacing after the title */
+  color: #333; /* Softer color for the title */
+}
+
+.work-desc {
+  font-size: 1.2em; /* Larger size for description */
+  max-width: 800px; /* Control the line length of the description */
+  text-align: center; /* Center align the description */
+  margin-bottom: 2em; /* Spacing before the cards */
 }
 
 .cards-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 20px;
+  flex-wrap: wrap; /* Allow cards to wrap to the next row */
+  justify-content: space-between; /* Distribute cards evenly */
+  gap: 20px; /* Spacing between cards */
 }
 
 .project-card {
-  flex-basis: calc(100% / 3 - 20px);
-  margin: 10px;
-  padding: 20px;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  text-align: left;
+  flex-basis: calc(33.333% - 20px); /* Three cards per row with spacing */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  border-radius: 15px; /* Rounded corners for modern look */
+  overflow: hidden; /* Ensures image fits card */
+  background: #fff; /* White background for the card */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+  padding: 20px; /* Increased padding for larger cards */
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Slight raise effect on hover */
 }
 
 .project-image {
   width: 100%;
   height: auto;
+  display: block; /* Remove extra space under the image */
 }
 
 .project-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #000;
+  margin-top: 0.5em; /* Spacing between image and title */
+  font-size: 1.75em; /* Slightly larger font size for the title */
 }
 
 .project-description {
-  font-size: 1em;
-  color: #000;
+  margin-top: 0.5em; /* Spacing between title and description */
+  font-size: 1em; /* Appropriate font size for readability */
+  color: #666; /* Softer color for description */
 }
 
 .project-link {
   display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  margin-top: 1em; /* Spacing between description and link */
+  padding: 10px 15px; /* Slightly smaller padding for the link */
+  background-color: #8EC5FC; /* Solid color for the link */
   color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background .3s;
+  border-radius: 25px; /* Fully rounded corners for the link */
+  transition: all 0.3s ease; /* Transition for background color */
 }
 
 .project-link:hover {
-  background: linear-gradient(62deg, #E0C3FC 0%, #8EC5FC 100%);
+  background-color: #E0C3FC; /* Color transition on hover */
+  color: #333; /* Text color transition on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .project-card {
+    flex-basis: calc(50% - 20px); /* Two cards per row with spacing on smaller screens */
+  }
+
+  .project-title,
+  .project-description {
+    padding: 0 10px; /* Padding for text inside card on smaller screens */
+  }
+
+  .project-link {
+    font-size: 1em; /* Smaller font size for the link on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    flex-basis: 100%; /* Full width cards on very small screens */
+  }
 }

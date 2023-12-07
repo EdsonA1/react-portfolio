@@ -1,30 +1,20 @@
-// src/components/Cards/Cards.js
+// ProjectCard.js
 import React from 'react';
-import './cards.css';
+import './cards.css'; // Make sure to create and import the CSS file
 
-const Card = ({ style, children }) => <div className="card" style={style}>{children}</div>;
-const CardImage = ({ orientation, src }) => <img className={`card-image ${orientation}`} src={src} alt="Card" />;
-const CardBody = ({ children }) => <div className="card-body">{children}</div>;
-const CardTitle = ({ children }) => <h5 className="card-title">{children}</h5>;
-const CardText = ({ children }) => <p className="card-text">{children}</p>;
-const Button = ({ href, children }) => <a className="card-button" href={href}>{children}</a>;
-
-// Update Cards to accept a projects array
-const Cards = ({ projects }) => {
+const Cards = ({ title, description, image, link }) => {
   return (
-    <div className="cards">
-      {projects.map((project, index) => (
-        <Card key={index} style={{ width: '18rem' }}>
-          <CardImage orientation="top" src={project.image} />
-          <CardBody>
-            <CardTitle>{project.title}</CardTitle>
-            <CardText>{project.description}</CardText>
-            <Button href={project.link}>Go somewhere</Button>
-          </CardBody>
-        </Card>
-      ))}
+    <div className="project-card">
+      <div className="project-image-container">
+        <img src={image} alt={title} className="project-image" />
+      </div>
+      <div className="project-info">
+        <h3 className="project-title">{title}</h3>
+        <p className="project-description">{description}</p>
+        <a href={link} className="project-link">More Info</a>
+      </div>
     </div>
   );
-}
+};
 
 export default Cards;
