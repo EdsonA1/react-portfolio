@@ -1,10 +1,8 @@
-// src/components/MainContent.js
+// Work.js
 import React from 'react';
 import './work.css';
-import Cards from '../Cards/cards';
 
 const Work = () => {
-    // Example array of projects
     const projects = [
         {
             title: 'Project One',
@@ -46,11 +44,20 @@ const Work = () => {
     ];
 
     return (
-        <div className="work">
-            <h1>Work</h1>
-            <Cards projects={projects}/>
+        <div id="work" className="work">
+          <h2 className="work-title">Work</h2>
+          <div className="cards-container">
+            {projects.map((project, index) => (
+              <div key={index} className="project-card">
+                <img src={project.image} alt={project.title} className="project-image" />
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                <a href={project.link} className="project-link">Learn More</a>
+              </div>
+            ))}
+          </div>
         </div>
-    );
-}
-
+      );
+    };
+    
 export default Work;

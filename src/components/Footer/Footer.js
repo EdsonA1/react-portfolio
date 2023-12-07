@@ -1,3 +1,4 @@
+// Footer.js
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './Footer.css';
@@ -7,14 +8,17 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-social-links">
         {/* Social Media Icons */}
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-github"></i>
+        <a href="https://github.com/YourGithubUsername" target="_blank" rel="noopener noreferrer" className="social-link github">
+          <i className="fab fa-github"></i> GitHub
         </a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/YourLinkedInUsername" target="_blank" rel="noopener noreferrer" className="social-link linkedin">
+          <i className="fab fa-linkedin"></i> LinkedIn
         </a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-youtube"></i>
+        <a href="mailto:YourEmail@example.com" target="_blank" rel="noopener noreferrer" className="social-link email">
+          <i className="fas fa-envelope"></i> Email
+        </a>
+        <a href="YourResume.pdf" target="_blank" rel="noopener noreferrer" className="social-link resume">
+          <i className="fas fa-file"></i> Resume
         </a>
       </div>
       <p className="footer-quote">"In a world of 0s and 1s, be the change that compiles positive impact."</p>

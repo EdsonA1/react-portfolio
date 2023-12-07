@@ -1,88 +1,88 @@
 /* Resume.css */
+
 .resume-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #f4f4f4; /* Light grey background */
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  text-align: center; /* Center the text */
+  color: #000; /* Change text color to black for better contrast against the white background */
 }
 
 .resume-block {
-  display: flex;
-  align-items: center;
-  background-color: #fff; /* White background for blocks */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  width: 80%;
-  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .icon {
   font-size: 2em;
-  color: #4a90e2; /* Icon color */
-  self-align: start;
   margin-bottom: 10px;
 }
 
 h2 {
-  font-size: 1.6em;
-  color: #333; /* Dark text color for headers */
-  margin-bottom: 15px;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-h3 {
-  font-size: 1.3em;
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.timeline-item h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.timeline-item p {
+  font-size: 1em;
   color: #333;
-  margin-top: 10px;
-  margin-bottom: 5px;
 }
 
-p, li {
-  color: #555; /* Lighter text color for paragraphs and list items */
-  line-height: 1.6;
+.carousel .slide {
+  background: none;
 }
 
-ul {
-  list-style: inside; /* Bullets inside the list */
-  padding-left: 0;
+.carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
+  border: none;
 }
 
-a {
-  color: #1a0dab; /* Link color */
-  text-decoration: none;
+.carousel .control-next.control-arrow:before {
+  content: '>';
 }
 
-a:hover {
-  text-decoration: underline;
+.carousel .control-prev.control-arrow:before {
+  content: '<';
 }
 
-/* Specific Styles for Different Sections */
-.experience, .project-detail, .experience-detail {
-  border-left: 4px solid #34a853; /* Green color for experience section */
-  padding-left: 15px;
+.carousel .control-dots .dot {
+  box-shadow: none;
 }
 
-.projects {
-  border-left: 4px solid #e26a4a; /* Orange color for projects section */
-  padding-left: 15px;
+.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover {
+  box-shadow: none;
+  background: #007bff;
 }
 
-.travel {
-  border-left: 4px solid #fbbc05; /* Yellow color for travel section */
-  padding-left: 15px;
+.carousel .thumbs-wrapper {
+  margin: 20px 0;
 }
 
-/* Additional CSS for Travel Images */
-.travel-images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Or use 'auto' for a row layout */
-  gap: 10px;
+.carousel .thumb {
+  border: none;
 }
 
-.travel-images img {
-  width: 100%; /* Adjust as needed */
-  height: auto;
-  border-radius: 5px; /* Optional: for rounded corners */
+.carousel .thumb.selected, .carousel .thumb:hover {
+  border: none;
 }

@@ -1,39 +1,62 @@
+/* Footer.css */
+
 .footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
-  background: radial-gradient(circle at top right, rgba(38,51,97,1) 0%, rgba(65,143,222,1) 100%);
-  color: #ffffff;
+  justify-content: center;
+  padding: 40px;
+  background-color: black;
+  font-family: 'Open Sans', Arial, sans-serif; /* Example font */
 }
 
-.footer-social-links a {
-  color: #ffffff;
-  margin: 0 10px;
-  font-size: 24px;
-  transition: color 0.3s ease;
+.footer-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* This provides even spacing between icons */
+  flex-wrap: wrap; /* Wrap items for smaller screens */
+  margin-bottom: 30px; /* Increased margin-bottom for more space */
 }
 
-.footer-social-links a:hover {
-  color: #EFDDB2; /* Gold color for contrast */
+.social-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  transition: color .3s, transform .3s; /* Added transform for animation */
+  text-decoration: none;
+  padding: 8px 16px; /* Padding for a larger click area */
+  border-radius: 5px; /* Slightly rounded corners for a modern look */
 }
+
+.social-link:hover {
+  color: #007bff;
+  transform: translateY(-3px); /* Slight raise effect on hover */
+  background-color: white; /* Subtle background color on hover */
+}
+
+/* Individual social link hover styles */
+.github:hover { color: #c179b9; }
+.linkedin:hover { color: #00a0dc; }
+.email:hover { color: #ea4335; }
+.resume:hover { color: #8ab4f8; }
 
 .footer-quote {
-  font-style: italic;
-  margin-bottom: 15px;
-  max-width: 600px;
+  font-size: 1.2em;
   text-align: center;
+  color: white; /* Softer color for the quote */
+  font-style: italic; /* Italicize the quote */
+  margin-bottom: 30px; /* Increased margin-bottom for more space */
+  max-width: 80%; /* Max-width to control the line length */
+  line-height: 1.4; /* Improved line height for readability */
 }
 
 .footer-bottom-text {
-  font-size: 14px;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .footer-social-links a {
-    margin: 0 8px;
-    font-size: 20px;
-  }
+  font-size: 1em;
+  color: white; /* Softer color for the copyright text */
+  margin-top: 30px; /* Space between quote and bottom text */
+  border-top: 1px solid #eaeaea; /* Separator for design */
+  padding-top: 15px; /* Space above the text */
+  width: 100%; /* Full width */
+  text-align: center; /* Ensures text is centered */
 }
