@@ -1,18 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import from react-router-dom if you're using it
+import { Link } from 'react-scroll'; // Importing Link from react-scroll
 import './MainContent.css';
-import WaveBitmoji from '../../assets/Wave_Bitmoji.png'; // Make sure the path is correct
+import WaveBitmoji from '../../assets/Wave_Bitmoji.png'; 
+import { Typewriter } from 'react-simple-typewriter';
 
 const MainContent = () => {
   return (
-    <div className="content-container">
-      <img src={WaveBitmoji} alt="Wave Bitmoji" className="bitmoji" />
-      <div id="main-content" className="main-content">
-        <h1>Hi, I'm <span className="name-highlight">Edson A.</span></h1>
-        <p>Computer Science, Real Estate, and Engineering Corporate Practice <span className="name-highlight">@ University of Notre Dame.</span> Learning and exploring the <span className="gradient-text">possibilities of software development & startups.</span></p>
-        <span className="sayhi">Say Hi <span className="wave">👋🏾</span></span>
-        {/* Use Link component for internal navigation */}
-        <a href="/work" className="viewwork">View My Work</a>
+    <div id="about" className="content-container"> {/* Adding id here */}
+      <div className="bitmoji-container">
+        <img src={WaveBitmoji} alt="Wave Bitmoji" className="bitmoji" />
+      </div>
+      <div className="main-content">
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Hi, I'm <span className="name-highlight">Edson A.</span>
+        </h2>
+        <p className="mt-4 text-gray-500">
+          <Typewriter
+            cursor
+            cursorBlinking
+            cursorColor="black"
+            delaySpeed={1000}
+            deleteSpeed={25}
+            loop={0}
+            typeSpeed={75}
+            words={[
+              'Student',
+              'Developer',
+              'Entrepreneur',
+              'Traveler'
+            ]}
+          />
+        </p>
+        <div className="button-container">
+          <span className="sayhi">Say Hi <span className="wave">👋🏾</span></span>
+          <Link to="projects" smooth={true} duration={500} className="viewwork">View My Work</Link> {/* Updated to use smooth scrolling */}
+        </div>
       </div>
     </div>
   );

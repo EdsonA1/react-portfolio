@@ -1,124 +1,153 @@
-{
-  "name":"Edson",
-  "headerTaglineOne":"Hi 👋🏾",
-  "headerTaglineTwo":"I'm Edson Augustin - creative",
-  "headerTaglineThree":"innovator and devloper",
-  "headerTaglineFour":" @University of Notre Dame",
-  "showCursor":true,
-  "showBlog":true,
-  "darkMode":true,
-  "showResume":true,
-  "socials":[
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+
+export const portfolioData = {
+  name: "Edson Augustin",
+  contactInfo: [
+    { type: "Email", link: "mailto:Eaugust2@nd.edu", icon: faEnvelope },
+    { type: "Phone", link: "tel:561-805-4561", icon: faPhone },
+    { type: "LinkedIn", link: "https://linkedin.com/in/edson-augustin/", icon: faLinkedin },
+    { type: "GitHub", link: "https://github.com/EdsonA1", icon: faGithub }
+  ],
+  interests: [
+    { name: "Coding 💻" },
+    { name: "AI & ML 🤖" },
+    { name: "Web Development 🌐" },
+    { name: "Cybersecurity 🔒" },
+    { name: "Hackathons 🏆" },
+    { name: "Data Science 📊" },
+    { name: "Cloud Computing ☁️" },
+    { name: "Open Source 🌍" },
+    { name: "Gaming 🎮" }
+  ],
+  projects: [
     {
-    "id":"1",
-    "title":"Github",
-    "link":"https://github.com/EdsonA1"
-  },
-  {
-    "id":"2",
-    "title":"LinkedIn",
-    "link":"https://www.linkedin.com/in/edson-augustin/"
-  },
-  {
-    "id":"3",
-    "title":"Email",
-    "link":"mailto:eaugust2@nd.edu.com"
-  }]
-}
-/*
-  "projects":[
-    {
-    "id":"1",
-    "title":"Project One Test",
-    "description":"Web Design",
-    "imageSrc":"https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-    "url":"http://chetanverma.com/"
-    },
-  {
-    "id":"2",
-    "title":"Project Two",
-    "description":"Web Development",
-    "imageSrc":"https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60",
-    "url":"http://chetanverma.com/"
-  },
-  {
-    "id":"3",
-    "title":"Project Three",
-    "description":"Design",
-    "imageSrc":"https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-    "url":"http://chetanverma.com/"
-  },
-  {
-    "id":"4",
-    "title":"Project Four",
-    "description":"Marketing",
-    "imageSrc":"https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-    "url":"http://chetanverma.com/"
-  },
-  {
-    "id":"5",
-    "title":"Project Five",
-    "description":"Development",
-    "imageSrc":"https://images.unsplash.com/photo-1534239143101-1b1c627395c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzZ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-    "url":"http://chetanverma.com/"
-  },
-  {
-    "id":"6",
-    "title":"Project Six",
-    "description":"Design & Development",
-    "imageSrc":"https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
-    "url":"http://chetanverma.com/"
-  }],
-  "services":[
-    {
-      "id":"1",
-      "title":"Art Direction",
-      "description":"We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."
+      title: 'Clearance Capital',
+      description: 'Description for Clearance Capital.',
+      image: require('../assets/ClearanceCapital.png'),
+      link: ''
     },
     {
-      "id":"2",
-      "title":"Branding",
-      "description":"We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
+      title: 'PantryPal',
+      description: 'Description for PantryPal.',
+      image: require('../assets/PantryPal.png'),
+      link: ''
     },
     {
-      "id":"3",
-      "title":"Web Design",
-      "description":"We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."
+      title: 'TRIBE',
+      description: 'Description for TRIBE.',
+      image: require('../assets/TRIBE.png'),
+      link: ''
     },
+  ],
+  education: [
     {
-      "id":"4",
-      "title":"3D Design",
-      "description":"We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
-    }],
-    "aboutpara":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "resume":
-    {
-      "tagline":"👋  I'm a software engineer, product designer.",
-      "description":"I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.",
-      "experiences":[
-        {
-          "id":"1",
-          "dates":"March 2022 - Present",
-          "type":"Full Time",
-          "position":"Frontend Engineer at X",
-          "bullets":"Bullet One, Bullet Two"
-        },
-        {
-          "id":"d495c23b-4f65-479a-9b8a-cfbc1c089725",
-          "dates":"July 2020 - March 2022",
-          "type":"Full Time",
-          "position":"Frontend Engineer at X",
-          "bullets":"Worked on the frontend of a React application, Worked on the frontend of a React application"
-        }],
-        "education":
-        {
-          "universityName":"University X",
-          "universityDate":"2016-2020",
-          "universityPara":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-        },
-        "languages":["Javascript","HTML5","CSS","Python","Go"],
-        "frameworks":["React","Typescript","NodeJs"],
-        "others":["Figma","AdobeXD","AWS"]
+      institution: "University of Notre Dame",
+      date: "May 2025",
+      degree: "Bachelor of Engineering in Computer Science with Minor in Real Estate and Engineering Corporate Practice",
+      additionalInfo: [
+        "Study Abroad: Real Estate & Built Environment, Bangkok, Thailand; London Gateway Engineering, London, UK",
+        "Relevant Coursework: Algorithms, Programming Paradigms, Operating System, Data Structures, Database Concepts, Theory of Computing, Computer Architecture, Computing-Based Entrepreneurship"
+      ]
     }
-}
-*/
+  ],
+  technicalSkills: {
+    languages: ["C/C++", "Python", "Java", "JavaScript/HTML/CSS", "SQL"],
+    frameworksLibraries: ["Next.js", "Express.js", "Node.js", "React.js", "Django", "Flask", "Bootstrap", "TailwindCSS", "MongoDB"],
+    tools: ["Git", "Linux", "MATLAB", "Figma", "AWS", "Microsoft Power Platform", "Autodesk Suite", "Adobe Dreamweaver"]
+  },
+  experience: [
+    {
+      company: "Starbucks",
+      location: "Seattle, WA",
+      date: "May 2024 – Present",
+      role: "Software Development Engineer Intern",
+      responsibilities: [
+        "Engineered server-side applications with React.js and APIs using Node.js, ensuring scalability and optimized database design for efficient data management.",
+        "Developed and maintained applications using Microsoft Power Platform and Azure OpenAI model to create a chatbot to streamline operations and enhance support, ensuring user-centric design and compatibility across devices."
+      ]
+    },
+    {
+      company: "Plante Moran",
+      location: "Chicago, IL",
+      date: "June 2023 – August 2023",
+      role: "Cybersecurity Track Intern",
+      responsibilities: [
+        "Conducted cybersecurity assessments for diverse companies, evaluating business process controls and information technology general controls using frameworks including SOX, SOC, HITRUST, and PCI.",
+        "Developed documentation for controls, prepared compliance reports, and assisted in mitigating internal and external risks associated with personal identifiable information and information assets."
+      ]
+    },
+    {
+      company: "Idea Center",
+      location: "Notre Dame, IN",
+      date: "August 2022 – May 2023",
+      role: "Technical Market Analyst",
+      responsibilities: [
+        "Analyzed new inventions and technology startups with a Total Addressable Market up to $500M.",
+        "Evaluated the market and key statistics to predict future market performance."
+      ]
+    }
+  ],
+  technicalProjects: [
+    {
+      name: "Smart Drive Through",
+      role: "Software Developer",
+      date: "July 2024 – Present",
+      details: [
+        "Utilized License Plate Recognition API to develop hackathon project using React.js, Express.js, & Node-RED."
+      ]
+    },
+    {
+      name: "Pantry Pal",
+      role: "Software Developer & Product Manager",
+      date: "October 2023 – December 2023",
+      details: [
+        "Co-developed a full stack application with a React.js front-end, designed to assist users in meal planning by leveraging a vast repository of over 10,000+ ingredients and recipes, ensuring a rich, budget-friendly diet.",
+        "Constructed a resilient MySQL database and orchestrated sophisticated JSON APIs capable of efficiently querying and manipulating extensive datasets, enhancing the application's performance and user experience."
+      ]
+    },
+    {
+      name: "TRiBE Hub",
+      role: "Hackathon Winner Project Software Developer",
+      date: "March 2023 – December 2023",
+      details: [
+        "Co-developed a secure web platform to connect the University of Notre Dame's community of 12,000+ members for collaborative resource sharing, featuring an innovative trust scoring system.",
+        "Implemented interactive features and a stringent user authentication system using JavaScript, React.js, TailwindCSS, and Python, restricting access to individuals with verified university email addresses."
+      ]
+    }
+  ],
+  leadershipExperience: [
+    {
+      role: "President",
+      organization: "National Society of Black Engineers",
+      date: "May 2024 - Present",
+      responsibilities: [
+        "Implement strategies to enhance the representation of culturally responsible black engineers in the industry."
+      ]
+    },
+    {
+      role: "Cofounder",
+      organization: "ColorStack Notre Dame Chapter",
+      date: "January 2024 – Present",
+      responsibilities: [
+        "Cofounded a chapter whose mission is to increase the number of Black and Latinx CS graduates and careers."
+      ]
+    },
+    {
+      role: "Career Preparation Fellow",
+      organization: "Management Leadership for Tomorrow",
+      date: "Feb 2023 – Present",
+      responsibilities: [
+        "Selected among thousands of applicants for Software Engineering career preparation and professional development."
+      ]
+    },
+    {
+      role: "Client Engineering & Technical Sales Track",
+      organization: "IBM Accelerate Program 2023",
+      date: "June 2023 – July 2023",
+      responsibilities: [
+        "Built an AI Chatbot for a financial institution utilizing IBM Watson Assistant, enhancing interactions and efficiency."
+      ]
+    }
+  ]
+};

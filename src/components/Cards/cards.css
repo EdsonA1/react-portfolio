@@ -1,63 +1,71 @@
-/* Cards.css */
-
 .project-card {
-  width: 270px; /* Fixed width for the card */
-  background: #FFFFFF; /* Card background color */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Card shadow for depth */
-  overflow: hidden; /* Ensures content fits within the corners */
-  margin: 15px; /* Space around card */
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions for hover effects */
+  width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  transition: transform 0.2s;
 }
 
 .project-card:hover {
-  transform: translateY(-5px); /* Lift card on hover */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+  transform: scale(1.05);
 }
 
 .project-image-container {
-  width: 100%; /* Image container takes up full card width */
-  padding-top: 56.25%; /* Aspect ratio padding hack for 16:9 aspect ratio */
-  background: #f0f0f0; /* Placeholder background color */
-  position: relative; /* Positioning context for absolute child elements */
+  position: relative;
+  width: 100%;
+  height: 200px; /* This height can be adjusted as needed */
+  background-size: cover;
+  background-position: center;
 }
 
-.project-image {
-  position: absolute; /* Absolute position the image */
-  top: 0;
+.project-title-overlay {
+  /* If you want to use the overlay, otherwise remove this block */
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure image covers the container */
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center; /* Center the title text */
 }
 
 .project-info {
-  padding: 15px; /* Padding inside card for content */
+  padding: 20px;
 }
 
 .project-title {
-  font-size: 1.1rem; /* Title font size */
-  font-weight: bold; /* Title font weight */
-  color: #333; /* Title text color */
-  margin-bottom: 10px; /* Space below title */
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 .project-description {
-  font-size: 0.9rem; /* Description font size */
-  color: #666; /* Description text color */
-  margin-bottom: 15px; /* Space below description */
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
 }
 
 .project-link {
-  display: inline-block; /* Allows padding and margin */
-  padding: 10px 15px; /* Padding for clickable area */
-  background: #007bff; /* Link background color */
-  color: #ffffff; /* Link text color */
-  text-decoration: none; /* No underline */
-  border-radius: 5px; /* Rounded corners for link/button */
-  transition: background-color 0.3s ease; /* Transition for background color */
+  padding: 12px 24px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 25px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s;
 }
 
 .project-link:hover {
-  background: #0056b3; /* Darken background on hover */
+  background: #333;
 }

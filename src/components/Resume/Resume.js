@@ -1,84 +1,74 @@
-// Resume.js
-import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import './Resume.css';
-import { FaBriefcase, FaGlobeAmericas } from 'react-icons/fa';
-import EdsonMountain from '../../assets/Edson_Moutain.jpeg';
-import Leepic from '../../assets/Leepic.png';
-import SinglePic from '../../assets/SinglePic.png';
+import React, { useState } from 'react';
+import { portfolioData } from '../../data/portfolio';
 
-const ResumeSection = () => {
-  const timeline = [
-    {
-      date: 'August 2021',
-      event: 'Enrolled in Notre Dame CS'
-    },
-    {
-      date: 'May 2022',
-      event: 'Introduced to Python and Matlab'
-    },
-    {
-      date: 'August 2022',
-      event: 'Introduced to C and C++'
-    },
-    {
-      date: 'December 2022',
-      event: 'Completed Graphics and System Management project in C'
-    },
-    {
-      date: 'May 2023',
-      event: 'Won Hackathon and deeper dive in Software Engineering'
-    },
-    {
-      date: 'June 2023',
-      event: 'IBM Program and Cybersecurity Internship'
-    },
-    {
-      date: 'August 2023',
-      event: 'Working on TRiBE startup'
-    },
-    {
-      date: 'August 2023',
-      event: 'Started Pantry Pal'
-    },
-    // Add as many events as you need here
-  ];
+const Experience = () => {
+  const [activeTab, setActiveTab] = useState('work');
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
 
   return (
-    <div className="resume-section">
-
-      {/* Timeline Section */}
-      <div className="resume-block timeline">
-        <FaBriefcase className="icon timeline-icon" />
-        <h2>My Journey in CS</h2>
-        {timeline.map((item, index) => (
-          <div key={index} className="timeline-item">
-            <h3>{item.date}</h3>
-            <p>{item.event}</p>
-          </div>
-        ))}
+    <div className="max-w-6xl mx-auto p-12">
+      <h2 className="text-5xl font-bold text-gray-900 mb-8 text-center">My Experience</h2>
+      
+      {/* Pill-shaped toggle button */}
+      <div className="flex justify-center space-x-6 mb-12">
+        <button
+          className={`py-3 px-8 text-lg rounded-full focus:outline-none ${activeTab === 'work' ? 'bg-black text-white' : 'bg-gray-300 text-black'}`}
+          onClick={() => handleTabClick('work')}
+        >
+          Work
+        </button>
+        <button
+          className={`py-3 px-8 text-lg rounded-full focus:outline-none ${activeTab === 'education' ? 'bg-black text-white' : 'bg-gray-300 text-black'}`}
+          onClick={() => handleTabClick('education')}
+        >
+          Education
+        </button>
       </div>
-
-      {/* Travel Section */}
-      <div className="resume-block travel">
-        <FaGlobeAmericas className="icon travel-icon" />
-        <h2>Travel</h2>
-        <Carousel>
-          <div>
-            <img src={EdsonMountain} alt="Edson Mountain View" />
-          </div>
-          <div>
-            <img src={Leepic} alt="Lee in Action" />
-          </div>
-          <div>
-            <img src={SinglePic} alt="Scenic Landscape" />
-          </div>
-        </Carousel>
-      </div>
-
+      
+      {/* Work Experience */}
+      {activeTab === 'work' && (
+        <div className="space-y-10">
+          {portfolioData.experience.map((exp, index) => (
+            <div key={index} className="flex space-x-6">
+              <div className="w-1/4 text-lg text-gray-600">{exp.date}</div>
+              <div className="w-3/4 bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-semibold text-gray-800">{exp.company} ({exp.location})</h3>
+                <p className="text-xl text-gray-700 mt-2">{exp.role}</p>
+                <ul className="list-disc list-inside mt-4 text-lg text-gray-700">
+                  {exp.responsibilities.map((responsibility, idx) => (
+                    <li key={idx}>{responsibility}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      
+      {/* Education */}
+      {activeTab === 'education' && (
+        <div className="space-y-10">
+          {portfolioData.education.map((edu, index) => (
+            <div key={index} className="flex space-x-6">
+              <div className="w-1/4 text-lg text-gray-600">{edu.date}</div>
+              <div className="w-3/4 bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-semibold text-gray-800">{edu.institution}</h3>
+                <p className="text-xl text-gray-700 mt-2">{edu.degree}</p>
+                <ul className="list-disc list-inside mt-4 text-lg text-gray-700">
+                  {edu.additionalInfo.map((info, idx) => (
+                    <li key={idx}>{info}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
-export default ResumeSection;
+export default Experience;

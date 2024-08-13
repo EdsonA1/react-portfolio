@@ -1,32 +1,28 @@
-// Footer.js
-import React from 'react';
-import '@fortawesome/fontawesome-free/css/all.css';
-import './Footer.css';
+import React, { useEffect, useState } from 'react';
 
 const Footer = () => {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <footer className="footer">
-      <div className="footer-social-links">
-        {/* Social Media Icons */}
-        <a href="https://github.com/YourGithubUsername" target="_blank" rel="noopener noreferrer" className="social-link github">
-          <i className="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/YourLinkedInUsername" target="_blank" rel="noopener noreferrer" className="social-link linkedin">
-          <i className="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="mailto:YourEmail@example.com" target="_blank" rel="noopener noreferrer" className="social-link email">
-          <i className="fas fa-envelope"></i> Email
-        </a>
-        <a href="YourResume.pdf" target="_blank" rel="noopener noreferrer" className="social-link resume">
-          <i className="fas fa-file"></i> Resume
-        </a>
+    <footer className="bg-white text-center py-8">
+      <div className="max-w-4xl mx-auto px-4">
+        <p className="text-xl font-medium mb-4">
+          "Do not be wise in your own eyes; Fear the Lord and shun evil" - Proverbs 3:7
+        </p>
       </div>
-      <p className="footer-quote">"In a world of 0s and 1s, be the change that compiles positive impact."</p>
-      <div className="footer-bottom-text">
-        © {new Date().getFullYear()} Edson Augustin. All rights reserved.
+      <div className="mt-6 text-2xl font-bold text-gray-800">
+        {currentTime.toLocaleString('en-US', { timeZone: 'America/New_York' })}
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

@@ -1,0 +1,76 @@
+/* If you're not using Tailwind, define similar styles for these classes */
+.bg-blue-200 {
+  background-color: #cfe8fc; /* Light blue background */
+}
+
+.text-blue-700 {
+  color: #1c64f2; /* Blue text */
+}
+
+.rounded-full {
+  border-radius: 9999px; /* Fully rounded borders for tags */
+}
+
+.mr-2 {
+  margin-right: 0.5rem; /* Right margin for spacing tags */
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem; /* Bottom margin for spacing between tags and bottom of card */
+}
+
+.px-3 {
+  padding-left: 0.75rem; /* Horizontal padding for tags */
+  padding-right: 0.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem; /* Vertical padding for tags */
+  padding-bottom: 0.25rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Large shadow for card */
+}
+
+.overflow-hidden {
+  overflow: hidden; /* Hide overflow */
+}
+
+.rounded {
+  border-radius: 0.20rem; /* Slightly rounded corners for card */
+}
+
+.max-w-sm {
+  max-width: 20rem; /* Maximum width for card */
+}
+
+.w-full {
+  width: 100%; /* Full width for elements */
+}
+
+.text-xl {
+  font-size: 1.25rem; /* Extra large text for title */
+}
+
+.font-bold {
+  font-weight: 700; /* Bold font weight for title */
+}
+
+.text-base {
+  font-size: 1rem; /* Base text size for description */
+}
+
+.text-gray-700 {
+  color: #4a5568; /* Dark gray text for description */
+}
+
+.px-6 {
+  padding-left: 1.5rem; /* Horizontal padding for card content */
+  padding-right: 1.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem; /* Vertical padding for card content */
+  padding-bottom: 1rem;
+}

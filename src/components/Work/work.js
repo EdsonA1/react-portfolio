@@ -1,65 +1,29 @@
 import React from 'react';
-import './work.css';
+import Marquee from 'react-fast-marquee';
 import Cards from '../Cards/cards';
+import { portfolioData } from '../../data/portfolio';
 
 const Work = () => {
-    const projects = [
-        {
-            title: 'Project One',
-            description: 'Description for Project One.',
-            image: 'path_to_image_here',
-            link: '#'
-        },
-        {
-            title: 'Project Two',
-            description: 'Description for Project Two.',
-            image: 'path_to_image_here',
-            link: '#'
-        },
-        {
-            title: 'Project Three',
-            description: 'Description for Project Three.',
-            image: 'path_to_image_here',
-            link: '#'
-        },
-        {
-            title: 'Project Four',
-            description: 'Description for Project Four.',
-            image: 'path_to_image_here',
-            link: '#'
-        },
-        {
-            title: 'Project Five',
-            description: 'Description for Project Five.',
-            image: 'path_to_image_here',
-            link: '#'
-        },
-        {
-            title: 'Project Six',
-            description: 'Description for Project Six.',
-            image: 'path_to_image_here',
-            link: '#'
-        },
-    ];
+  const { projects } = portfolioData;
 
-    return (
-        <div id="work" className="work">
-            <h2 className="work-title">Work</h2>
-            <p className="work-desc">Below, you can explore a selection of my projects...</p>
-            <div className="cards-container">
-                {projects.map((project, index) => (
-                    <div key={index} className="project-card">
-                        <Cards
-                            title={project.title}
-                            description={project.description}
-                            image={project.image}
-                            link={project.link}
-                        />
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <div id="projects" className="max-w-screen-2xl mx-auto p-12 flex flex-col items-center">
+      <h2 className="text-5xl font-bold text-gray-800 mb-6">Some of my projects...</h2>
+      <p className="text-xl text-gray-600 mb-10">Here is a selection of projects that I've worked on, showcasing my skills and experience.</p>
+      <Marquee gradient={false} speed={50} pauseOnHover={true} className="w-full">
+        {projects.map((project, index) => (
+          <div key={index} className="mx-6">
+            <Cards
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              link={project.link}
+            />
+          </div>
+        ))}
+      </Marquee>
+    </div>
+  );
 };
 
 export default Work;
